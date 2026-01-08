@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <style>
+            body{
+                font-family: 'Segoe UI', sans-serif;
+                background-color: #222;
+                color: white;
+                text-align: center;
+                padding: 50px;
+            }
+            h1{
+                font-size: 50px;
+                margin-bottom: 50px;
+            }
+            p{
+                color: #ccc;
+                margin-bottom: 50px;
+            }
+            .project-grid{
+                display:flex;
+                justify-content: center;
+                flex-wrap:wrap;
+                gap: 20px;
+            }
+            .card{
+                background-color: #333;
+                width: 250px;
+                padding: 20px;
+                border-radius: 15px;
+                text-decoration: none;
+                color: white;
+                transition: transform 0.3s, background-color 0.3s;
+                border: 1px solid #444;
+            }
+            .emoji{
+                font-size:40px;
+                display:block;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1> My Projects</h1>
+        <p>A collection of my java learning journey.</p>
+            
+            <div class="project-grid">
+
+                <a href="counter.html" class = "card">
+                    <span class="emoji"></span>
+                    <h3>Simple Counter</h3>
+                    <p>A tool to count numbers up and down using variables.</p>
+                </a>
+
+                <a href="to-do_list.html" class = "card">
+                    <span class="emoji"></span>
+                    <h3>To-Do List</h3>
+                    <p>Add and remove tasks using DOM manipulation.</p>
+                </a>
+
+                <a href="api.html" class = "card">
+                    <span class="emoji"></span>
+                    <h3>Dog API</h3>
+                    <p>Fetches random dog images from a remote server.</p>
+                </a>
+            </div>
+    </body>
+</html>

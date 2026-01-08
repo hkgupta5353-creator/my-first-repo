@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id= 'toggleBtn'onclick="toggleLight()"> Turn Lights Off</button>
+        <h1> HELLO WORLD</h1>
+        
+        <script>
+            function toggleLight(){
+                let currentColor = document.body.style.backgroundColor;
+                let button = document.getElementById('toggleBtn')
+
+                if(currentColor == "black"){
+                    document.body.style.backgroundColor = "white";
+                    document.body.style.color = "black" ;
+                    button.innerText = "Turn Light Off";
+                }
+                else {
+                     document.body.style.backgroundColor = "black";
+                    document.body.style.color = "white" ;
+                    button.innerText = "Turn Light On";
+                }
+            }
+        </script>
+    </body>
+</html>

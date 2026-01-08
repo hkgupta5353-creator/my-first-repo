@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API Call</title>
+        <style>
+            body{
+                font-family: sans-serif;
+                text-align: center;
+                background-color: #f0f8ff;
+                padding-top: 50px;
+            }
+            .container{
+                background: white;
+                display:inline-block;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0px 10px 20px rgba(0,0,0,0,1);
+                max-width: 500px;
+            }
+            button{
+                padding: 15px 30px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            button:hover{
+                background-color: #0056b3;
+            }
+            img{
+                max-width: 100%;
+                height:auto;
+                border-radius: 10px;
+                display:block;
+                margin:0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Dog Fetcher</h1>
+
+            <button onclick="getDog()">Fetch New Dog</button>
+
+            <img id="dog-img" src="" alt="Click the button to see a dog!">
+
+        </div>
+
+        <script>
+            function getDog(){
+                const url="https://dog.ceo/api/breeds/image/random";
+
+                fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    const imageUrl= data.message;
+                    document.getElementById("dog-img").src=imageUrl;
+                })
+                .catch(function(error){
+                    console.log("Error:",error);
+                });
+            }
+        </script>
+    </body>
+</html>

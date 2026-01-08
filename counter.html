@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Counter</title>
+        <style>
+            body{
+                text-align:center;
+                font-family: sans-serif;
+                margin-top: 50px;
+                background-color: #f0f0f0;
+            }
+          /*  h1{
+                color:#333;
+            }*/
+            #count-diaplay{
+                font-size: 50px;
+                font-weight: bold;
+               /* margin: 20px;*/
+                color:blue;
+
+                padding:0 20px;
+                vertical-align: middle;
+            }
+            button{
+                padding:15px 30px;
+                font-size: 20px;
+                cursor:pointer;
+               /* margin:5px;*/
+                background-color:white;
+                border:2px solid black;
+                border-radius:5px;
+
+                vertical-align: middle;
+            }
+            button:hover{
+                background-color:#ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Simple Counter </h1>
+
+        <button onclick="decrease()">-</button>
+
+        <span id="count-display">0</span>
+
+        <button onclick="increase()">+</button>
+
+        <script>
+            let count = 0;
+            let countElement= document.getElementById("count-display");
+            
+            function decrease(){
+                count = count-1;
+                countElement.innerText = count;
+                checkColor();
+            }
+            function increase(){
+                count = count+1;
+                countElement.innerText = count;
+                checkColor();
+            }
+            function checkColor(){
+                if(count <0 ){
+                    countElement.style.color ="red";
+                }
+                else{
+                    countElement.style.color="blue";
+                }
+
+            }
+        </script>
+    </body>
+</html>

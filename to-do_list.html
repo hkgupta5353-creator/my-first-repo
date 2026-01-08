@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My To-Do List</title>
+        <style>
+            body{
+                font-family: sans-serif;
+                background-color: #f4f4f4;
+                display: flex;
+                justify-content: center;
+            }
+            .container{
+                background: white;
+                padding: 20px;
+                margin-top: 50px;
+                width: 300px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0,1);
+            }
+            input{
+                padding: 10px;
+                width: 70%;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            button{
+                padding: 10px;
+                background-color: #28a745;
+                color:white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            li{
+                background: #fff;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .checked{
+                text-decoration: line-through;
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <h2>My Goals</h2>
+
+            <input type="text" id="myInput" placeholder="Type a task...">
+            <button onclick="newElement()">Add</button>
+
+            <ul id="myUL">
+            </ul>
+        </div>
+
+
+        <script>
+            function newElement(){
+                let inputValue = document.getElementById("myInput").value;
+
+                if(inputValue === ''){
+                    alert("You must write something!:")
+                    return;
+                }
+
+                let li=document.createElement("li");
+                li.innerText=inputValue ;
+
+                li.onclick=function(){
+                    this.classList.toggle('checked');
+                };
+
+                document.getElementById("myUL").appendChild(li);
+                document.getElementById("myInput").value="";
+            }
+        </script>
+    </body>
+</html>
